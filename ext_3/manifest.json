@@ -1,0 +1,61 @@
+{
+    "name": "example_name",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description":"example_description",
+    // "browser_action":{ 
+    //     "default_popup":"popup.html",
+    //     "default_title":"browser_action title",
+    //     "default_icon":{
+    //         "16": "images/icon-16.png",
+    //         "32": "images/icon-32.png",
+    //         "48": "images/icon-48.png",
+    //         "128": "images/icon-128.png"
+    //     }
+    // },
+    "page_action":{
+        "default_popup":"popup.html",
+        "default_title": "page_action title",
+        "default_icon":{
+            "16": "images/icon-16.png",
+            "32": "images/icon-32.png",
+            "48": "images/icon-48.png",
+            "128": "images/icon-128.png"
+        }
+    },
+
+    "background": {
+       "scripts":["background.js"],
+       "persistent":false
+    },
+    "content_scripts": [ {
+       "js": ["content.js"],
+       "matches": [ "http://*/*", "https://*/*", "ftp://*/*" ],
+       "run_at": "document_start"
+    } ],
+
+
+   "permissions": [ 
+       "contextMenus", 
+       "cookies", 
+       "tabs", 
+       "webNavigation", 
+    //    "webRequest", 
+       "webRequestBlocking", 
+       "downloads", 
+       "http://*/*", 
+       "https://*/*", 
+       "nativeMessaging", 
+       "storage", 
+       "proxy" 
+    ],
+       
+
+    "icons": {
+        "16": "images/icon-16.png",
+        "32": "images/icon-32.png",
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png"
+    }
+ }
+ 
